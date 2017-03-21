@@ -1,17 +1,15 @@
-function drawPyramid(height) {
+function drawPyramid() {
 
     var pyramidShape = document.getElementById("shape").value;
-    document.getElementById("pyramid").innerHTML="" + pyramidShape;
-
     var pyramidHeight = document.getElementById("height").value;
-    document.getElementById("pyramid").innerHTML = "" + pyramidHeight;
 
     document.getElementById("pyramid").innerHTML = "";
+    document.getElementById("slider_num").innerHTML = ("&nbsp&nbsp" + pyramidHeight);
 
-    for (var row = 0; row < height; row++) {
+    for (var row = 0; row < pyramidHeight; row++) {
 
         var numBricks = row + 2;
-        var numSpaces = height - row - 1;
+        var numSpaces = pyramidHeight - row - 1;
 
         var rowStr = "";
         for (var i = 0; i < numSpaces; i++) {
@@ -24,6 +22,5 @@ function drawPyramid(height) {
         rowElem = document.createElement("p");
         rowElem.innerHTML = rowStr;
         document.getElementById("pyramid").appendChild(rowElem);
-
     }
 }
